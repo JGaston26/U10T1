@@ -1,7 +1,7 @@
 public class RecursionThatHalts {
     public static void main(String [] args) {
         System.out.println("main method called");
-        fibonacci(1);
+        fibonacci(0,1);
         System.out.println("main method ended");
     }
 
@@ -19,14 +19,13 @@ public class RecursionThatHalts {
         }
         System.out.println("recursive end, n = " + n);
     }
-    public static void fibonacci(int n){
-        int i = 0;
-        n += i;
-
-        System.out.println(n);
-        if (n < 1836311903){
-            n++;
-            fibonacci(n+1);
+    public static void fibonacci(int j, int i){
+        int sum = i + j;
+        System.out.println(sum);
+        if (sum < 1836311903){
+            j = i;
+            i = sum;
+            fibonacci(j,i);
         }
     }
 
